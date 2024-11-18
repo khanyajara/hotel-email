@@ -22,13 +22,15 @@ tls: {
 });
 
 // Function to send confirmation email
-const sendConfirmationEmail = (email, username) => {
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: email,
-    subject: 'Confirm Your Email Address',
-    text: `Hello ${username},\n\nThank you for signing up! Please confirm your email address to complete the registration process.\n\nBest regards,\nYour App Team`
-  };
+const sendConfirmationEmail = (email, username, ) => {
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: `Booking Confirmation at Forrest Hills`,
+      text: `Hello ${username},\n\nThank you for booking with Forrest Hills! Your reservation has been confirmed.\n\nDetails of your booking:\nHotel: Forrest Hills\n\nWe look forward to welcoming you. If you have any questions or need assistance, feel free to contact us.\n\nBest regards,\nForrest Hills Team`
+    };
+  
+  
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
